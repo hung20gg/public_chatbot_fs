@@ -1,0 +1,31 @@
+Here is a natural language query that you need to convert into a SQL query:
+
+<task>
+{task}
+</task>
+
+### Company details
+<data>
+
+{stock_code_table}
+
+</data>
+
+### Snapshot of the mapping table:
+<data>
+
+{suggestions_table}
+
+</data>
+
+<example>
+
+{few_shot}
+
+</example>
+ 
+<instruction>
+
+Think step-by-step and return SQL query that suitable with the database schema based on the natural language query above
+
+</instruction>

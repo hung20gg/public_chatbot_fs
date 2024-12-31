@@ -1,0 +1,50 @@
+You have the following database schema:
+
+<description>
+
+{database_description}
+
+</description>
+
+Here is a natural language query that you need to convert into a query:
+
+<query>
+
+{task}
+
+</query>    
+
+Note:
+- You must get the financial ratio data in `financial_ratio` table.
+- Your SQL query must only access the database schema provided.
+- In each step, you should only do the task that is required. Do not do the task of next step.
+- Make the SQL query as simple and readable as possible. Utilize existing data from previous steps to avoid unnecessary query.
+- You are penalized if generating wrong or meaningless SQL query 
+- If the data provided is enough to answer the question, you don't have to return SQL query.
+        
+Here are the steps to break down the task:
+
+<steps>
+
+{steps_string}
+
+</steps>      
+
+Snapshot of the mapping table:
+
+<data>
+
+{suggestions_table}
+
+</data>
+
+### Note: 
+- Include the detailed suitable name (including datetime, industry,... ) for the table in the query in the following format:
+    ```sql
+
+    -- ### detailed_table_name
+
+    ```
+- The user can only see the sql results, so your name should be as informative as possible
+- If the time is not mentioned, assume getting the current time (Q3 2024)
+- Do not make any assumption about the column name. You can refer to the mapping table above to find the suitable column name.
