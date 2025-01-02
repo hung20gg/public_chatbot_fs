@@ -45,6 +45,8 @@ or with GPU
 docker-compose --profile local-embedding --profile local-reranker up -d
 ```
 
+- Manually create `test_db` database 
+
 - Setup conda env
 ```bash
 conda create -n text2sql
