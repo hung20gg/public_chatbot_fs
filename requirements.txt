@@ -25,3 +25,4 @@ pyarrow
 streamlit
 pymongo
 langchain_milvus
+FlagEmbedding

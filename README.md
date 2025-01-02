@@ -13,7 +13,7 @@
 - Partial sql. Instead of query to find the solution, breakdown steps and solve it one-by-one
 - Include debugging
 
-## Setup guide
+## Setup guide (Currently bug)
 
 - Make `run.sh` file executable
 ```bash
@@ -22,16 +22,53 @@ chmod +x run.sh
 
 - For CPU (Using OpenAI Embedding)
 ```bash
-./run.sh --openai True
+./run.sh --force True --openai True
 ```
 
 - For GPU (Self-hosted Embedding Server)
 ```bash
-./run.sh local-embedding --local True
+./run.sh local-embedding --force True --local True
 ```
 - For GPU, Including Reranker 
 ```bash
-./run.sh local-server --local True 
+./run.sh local-model --force True --local True 
+```
+
+## Setup guide temp
+
+- Run docker image
+```bash
+docker-compose up -d
+```
+or with GPU
+```bash
+docker-compose --profile local-embedding --profile local-reranker up -d
+```
+
+- Setup conda env
+```bash
+conda create -n text2sql
+conda activate text2sql
+pip install -r requirements.txt
+```
+
+- Install llm lib
+```bash
+git clone https://github.com/hung20gg/llm.git
+```
+
+- Setup database + embedding
+```bash
+python3 setup.py --force True --openai True
+```
+or with GPU
+```bash
+python3 setup.py --force True --local True
+```
+
+- Run streamlit
+```bash
+streamlit run home.py
 ```
 
 ## DB In the pipeline

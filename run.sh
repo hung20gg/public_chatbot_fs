@@ -2,6 +2,8 @@
 
 # Step 1: Start the database containers
 # Check for the first argument
+source .env
+
 if [ "$1" = "local-embedding" ]; then
   echo "Setting up local embedding server..."
    docker-compose --profile local-embedding up -d
